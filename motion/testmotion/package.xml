@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
-  <name>pathfinding2</name>
+  <name>motion</name>
   <version>0.0.1</version>
-  <description>path finding for sjtu drone</description>
+  <description>motion for ur3e</description>
 
   <maintainer email="grant.i.taylor@student.uts.edu.au">Grant Taylor</maintainer>
 
@@ -33,12 +33,10 @@
   <depend>tf2_ros</depend>
   <depend>tf2_geometry_msgs</depend>
   <depend>geometry_msgs</depend>
-  <depend>rosbag2_cpp</depend>
   <depend>std_srvs</depend>
   <depend>visualization_msgs</depend>
-
-  <depend>pcl_conversions</depend>
-  <depend>pcl_ros</depend>
+  <depend>moveit_visual_tools</depend>
+  <depend>moveit_ros_planning_interface</depend>
 
   <test_depend>ament_cmake_ros</test_depend>
   

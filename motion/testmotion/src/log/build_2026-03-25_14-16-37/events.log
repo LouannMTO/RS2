@@ -1,0 +1,236 @@
+[0.000000] (-) TimerEvent: {}
+[0.000335] (hello_moveit) JobQueued: {'identifier': 'hello_moveit', 'dependencies': OrderedDict()}
+[0.000359] (ros_tcp_endpoint) JobQueued: {'identifier': 'ros_tcp_endpoint', 'dependencies': OrderedDict()}
+[0.000373] (hello_moveit) JobStarted: {'identifier': 'hello_moveit'}
+[0.004533] (ros_tcp_endpoint) JobStarted: {'identifier': 'ros_tcp_endpoint'}
+[0.009245] (hello_moveit) JobProgress: {'identifier': 'hello_moveit', 'progress': 'cmake'}
+[0.009734] (hello_moveit) Command: {'cmd': ['/usr/bin/cmake', '/home/grant/git/RS2/motion/testmotion/src/hello_moveit', '-DCMAKE_INSTALL_PREFIX=/home/grant/git/RS2/motion/testmotion/src/install/hello_moveit'], 'cwd': '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'grant'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/grant'), ('OLDPWD', '/home/grant/rs2_ros2_ws/motion_test'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2145'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'grant'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'grant'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/humble/bin:/home/grant/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/grant-Yoga-7:@/tmp/.ICE-unix/2118,unix/grant-Yoga-7:/tmp/.ICE-unix/2118'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/fa0cb3a4_a49e_497f_931a_6b870f30c01b'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Z6CUM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.101'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble')]), 'shell': False}
+[0.049890] (hello_moveit) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.088534] (hello_moveit) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.093512] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.099724] (-) TimerEvent: {}
+[0.143813] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.148702] (hello_moveit) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.148883] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.149154] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.151113] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.200114] (-) TimerEvent: {}
+[0.213051] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.218273] (hello_moveit) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.218474] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.218797] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.220753] (hello_moveit) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300205] (-) TimerEvent: {}
+[0.326903] (hello_moveit) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.393376] (hello_moveit) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)\n'}
+[0.400296] (-) TimerEvent: {}
+[0.500518] (-) TimerEvent: {}
+[0.518207] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread \n'}
+[0.548346] (ros_tcp_endpoint) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/ros_tcp_endpoint', 'build', '--build-base', '/home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build', 'install', '--record', '/home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/install.log', '--install-scripts', '$base/lib/ros_tcp_endpoint', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/grant/git/RS2/motion/testmotion/src/ROS-TCP-Endpoint-main-ros2', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_AU:en', 'USER': 'grant', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'HOME': '/home/grant', 'OLDPWD': '/home/grant/rs2_ros2_ws/motion_test', 'DESKTOP_SESSION': 'ubuntu', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2145', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/grant/rs2_ros2_ws/motion_test/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'grant', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'grant', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo/../../share/gazebo-11/models:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/opt/ros/humble/bin:/home/grant/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/grant-Yoga-7:@/tmp/.ICE-unix/2118,unix/grant-Yoga-7:/tmp/.ICE-unix/2118', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/fa0cb3a4_a49e_497f_931a_6b870f30c01b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.Z6CUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.101', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo/../../share/gazebo-11:', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'GAZEBO_PLUGIN_PATH': '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/grant/rs2_ros2_ws/motion_test/install/motion'}, 'shell': False}
+[0.550700] (hello_moveit) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.555452] (hello_moveit) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.561976] (hello_moveit) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.570892] (hello_moveit) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.582769] (hello_moveit) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.600609] (-) TimerEvent: {}
+[0.700847] (-) TimerEvent: {}
+[0.740201] (ros_tcp_endpoint) StderrLine: {'line': b"/usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[0.740407] (ros_tcp_endpoint) StderrLine: {'line': b'  warnings.warn(\n'}
+[0.747215] (ros_tcp_endpoint) StdoutLine: {'line': b'running egg_info\n'}
+[0.748426] (ros_tcp_endpoint) StdoutLine: {'line': b'creating ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info\n'}
+[0.748613] (ros_tcp_endpoint) StdoutLine: {'line': b'writing ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/PKG-INFO\n'}
+[0.748805] (ros_tcp_endpoint) StdoutLine: {'line': b'writing dependency_links to ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/dependency_links.txt\n'}
+[0.748928] (ros_tcp_endpoint) StdoutLine: {'line': b'writing entry points to ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/entry_points.txt\n'}
+[0.749046] (ros_tcp_endpoint) StdoutLine: {'line': b'writing requirements to ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/requires.txt\n'}
+[0.749114] (ros_tcp_endpoint) StdoutLine: {'line': b'writing top-level names to ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/top_level.txt\n'}
+[0.749208] (ros_tcp_endpoint) StdoutLine: {'line': b"writing manifest file '../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'\n"}
+[0.750344] (ros_tcp_endpoint) StdoutLine: {'line': b"reading manifest file '../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'\n"}
+[0.750475] (ros_tcp_endpoint) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[0.750951] (ros_tcp_endpoint) StdoutLine: {'line': b"writing manifest file '../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'\n"}
+[0.751063] (ros_tcp_endpoint) StdoutLine: {'line': b'running build\n'}
+[0.751134] (ros_tcp_endpoint) StdoutLine: {'line': b'running build_py\n'}
+[0.751282] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build\n'}
+[0.751383] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib\n'}
+[0.751436] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.751507] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/__init__.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.751610] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/service.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.751789] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/default_server_endpoint.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.752023] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/unity_service.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.752154] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/thread_pauser.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.752361] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/exceptions.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.752661] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/server.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.752899] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/communication.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.753111] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/client.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.753330] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/subscriber.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.753534] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/publisher.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.753702] (ros_tcp_endpoint) StdoutLine: {'line': b'copying ros_tcp_endpoint/tcp_sender.py -> /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint\n'}
+[0.754129] (ros_tcp_endpoint) StdoutLine: {'line': b'running install\n'}
+[0.754458] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_lib\n'}
+[0.755116] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755202] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/__init__.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755280] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/service.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755361] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/default_server_endpoint.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755454] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/unity_service.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755540] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/thread_pauser.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755612] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/exceptions.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755681] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/server.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755749] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/communication.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755830] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/client.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755898] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/subscriber.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.755972] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/publisher.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.756054] (ros_tcp_endpoint) StdoutLine: {'line': b'copying /home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/tcp_sender.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint\n'}
+[0.756378] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/__init__.py to __init__.cpython-310.pyc\n'}
+[0.756531] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/service.py to service.cpython-310.pyc\n'}
+[0.756898] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/default_server_endpoint.py to default_server_endpoint.cpython-310.pyc\n'}
+[0.757099] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/unity_service.py to unity_service.cpython-310.pyc\n'}
+[0.757333] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/thread_pauser.py to thread_pauser.cpython-310.pyc\n'}
+[0.757498] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/exceptions.py to exceptions.cpython-310.pyc\n'}
+[0.757619] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/server.py to server.cpython-310.pyc\n'}
+[0.759496] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/communication.py to communication.cpython-310.pyc\n'}
+[0.759692] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/client.py to client.cpython-310.pyc\n'}
+[0.760388] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/subscriber.py to subscriber.cpython-310.pyc\n'}
+[0.760651] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/publisher.py to publisher.cpython-310.pyc\n'}
+[0.760870] (ros_tcp_endpoint) StdoutLine: {'line': b'byte-compiling /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/tcp_sender.py to tcp_sender.cpython-310.pyc\n'}
+[0.761776] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_data\n'}
+[0.761882] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ament_index\n'}
+[0.761982] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ament_index/resource_index\n'}
+[0.762052] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ament_index/resource_index/packages\n'}
+[0.762157] (ros_tcp_endpoint) StdoutLine: {'line': b'copying resource/ros_tcp_endpoint -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ament_index/resource_index/packages\n'}
+[0.762222] (ros_tcp_endpoint) StdoutLine: {'line': b'copying package.xml -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ros_tcp_endpoint\n'}
+[0.762262] (ros_tcp_endpoint) StdoutLine: {'line': b'creating /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ros_tcp_endpoint/launch\n'}
+[0.762322] (ros_tcp_endpoint) StdoutLine: {'line': b'copying launch/endpoint.py -> /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/share/ros_tcp_endpoint/launch\n'}
+[0.762409] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.763570] (ros_tcp_endpoint) StdoutLine: {'line': b'Copying ../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info to /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint-0.0.1-py3.10.egg-info\n'}
+[0.764040] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_scripts\n'}
+[0.778113] (ros_tcp_endpoint) StdoutLine: {'line': b'Installing default_server_endpoint script to /home/grant/git/RS2/motion/testmotion/src/install/ros_tcp_endpoint/lib/ros_tcp_endpoint\n'}
+[0.778571] (ros_tcp_endpoint) StdoutLine: {'line': b"writing list of installed files to '/home/grant/git/RS2/motion/testmotion/src/build/ros_tcp_endpoint/install.log'\n"}
+[0.781403] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[0.794735] (ros_tcp_endpoint) CommandEnded: {'returncode': 0}
+[0.800950] (-) TimerEvent: {}
+[0.801897] (ros_tcp_endpoint) JobEnded: {'identifier': 'ros_tcp_endpoint', 'rc': 0}
+[0.822895] (hello_moveit) StdoutLine: {'line': b'-- Found parameter_traits: 0.5.0 (/opt/ros/humble/share/parameter_traits/cmake)\n'}
+[0.852667] (hello_moveit) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.854736] (hello_moveit) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.901050] (-) TimerEvent: {}
+[0.920730] (hello_moveit) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.938848] (hello_moveit) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.971206] (hello_moveit) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.977977] (hello_moveit) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.001151] (-) TimerEvent: {}
+[1.021653] (hello_moveit) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 16.0.15 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)\n'}
+[1.045613] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem \n'}
+[1.101253] (-) TimerEvent: {}
+[1.115106] (hello_moveit) StdoutLine: {'line': b'-- library: /usr/lib/x86_64-linux-gnu/libcurl.so\n'}
+[1.139971] (hello_moveit) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.140114] (hello_moveit) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.201352] (-) TimerEvent: {}
+[1.249275] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono \n'}
+[1.275696] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options \n'}
+[1.294427] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread \n'}
+[1.301424] (-) TimerEvent: {}
+[1.318142] (hello_moveit) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.379344] (hello_moveit) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.379486] (hello_moveit) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/grant/git/RS2/motion/testmotion/src/hello_moveit/include>\n'}
+[1.379526] (hello_moveit) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.380064] (hello_moveit) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.380822] (hello_moveit) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.380873] (hello_moveit) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.381235] (hello_moveit) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.381898] (hello_moveit) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.401523] (-) TimerEvent: {}
+[1.403640] (hello_moveit) StdoutLine: {'line': b'-- Generating done\n'}
+[1.408626] (hello_moveit) StdoutLine: {'line': b'-- Build files have been written to: /home/grant/git/RS2/motion/testmotion/src/build/hello_moveit\n'}
+[1.418622] (hello_moveit) CommandEnded: {'returncode': 0}
+[1.419148] (hello_moveit) JobProgress: {'identifier': 'hello_moveit', 'progress': 'build'}
+[1.419649] (hello_moveit) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit', '--', '-j8', '-l8'], 'cwd': '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'grant'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/grant'), ('OLDPWD', '/home/grant/rs2_ros2_ws/motion_test'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2145'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'grant'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'grant'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/humble/bin:/home/grant/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/grant-Yoga-7:@/tmp/.ICE-unix/2118,unix/grant-Yoga-7:/tmp/.ICE-unix/2118'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/fa0cb3a4_a49e_497f_931a_6b870f30c01b'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Z6CUM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.101'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble')]), 'shell': False}
+[1.458131] (hello_moveit) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/hello_moveit.dir/src/hello_moveit.cpp.o\x1b[0m\n'}
+[1.489619] (hello_moveit) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable hello_moveit\x1b[0m\n'}
+[1.501621] (-) TimerEvent: {}
+[1.601880] (-) TimerEvent: {}
+[1.702131] (-) TimerEvent: {}
+[1.802380] (-) TimerEvent: {}
+[1.902626] (-) TimerEvent: {}
+[2.002867] (-) TimerEvent: {}
+[2.103201] (-) TimerEvent: {}
+[2.203469] (-) TimerEvent: {}
+[2.303726] (-) TimerEvent: {}
+[2.403984] (-) TimerEvent: {}
+[2.504252] (-) TimerEvent: {}
+[2.604526] (-) TimerEvent: {}
+[2.704771] (-) TimerEvent: {}
+[2.805012] (-) TimerEvent: {}
+[2.905244] (-) TimerEvent: {}
+[3.005494] (-) TimerEvent: {}
+[3.105746] (-) TimerEvent: {}
+[3.205980] (-) TimerEvent: {}
+[3.306268] (-) TimerEvent: {}
+[3.406538] (-) TimerEvent: {}
+[3.506784] (-) TimerEvent: {}
+[3.607079] (-) TimerEvent: {}
+[3.707340] (-) TimerEvent: {}
+[3.807596] (-) TimerEvent: {}
+[3.907838] (-) TimerEvent: {}
+[4.008080] (-) TimerEvent: {}
+[4.108345] (-) TimerEvent: {}
+[4.208581] (-) TimerEvent: {}
+[4.308859] (-) TimerEvent: {}
+[4.409107] (-) TimerEvent: {}
+[4.509380] (-) TimerEvent: {}
+[4.609637] (-) TimerEvent: {}
+[4.709885] (-) TimerEvent: {}
+[4.810748] (-) TimerEvent: {}
+[4.910988] (-) TimerEvent: {}
+[5.011253] (-) TimerEvent: {}
+[5.111514] (-) TimerEvent: {}
+[5.211767] (-) TimerEvent: {}
+[5.312019] (-) TimerEvent: {}
+[5.412248] (-) TimerEvent: {}
+[5.512959] (-) TimerEvent: {}
+[5.613245] (-) TimerEvent: {}
+[5.713490] (-) TimerEvent: {}
+[5.813752] (-) TimerEvent: {}
+[5.913998] (-) TimerEvent: {}
+[6.014250] (-) TimerEvent: {}
+[6.114536] (-) TimerEvent: {}
+[6.214766] (-) TimerEvent: {}
+[6.314997] (-) TimerEvent: {}
+[6.415236] (-) TimerEvent: {}
+[6.515510] (-) TimerEvent: {}
+[6.615757] (-) TimerEvent: {}
+[6.716024] (-) TimerEvent: {}
+[6.816307] (-) TimerEvent: {}
+[6.916549] (-) TimerEvent: {}
+[7.016811] (-) TimerEvent: {}
+[7.117094] (-) TimerEvent: {}
+[7.217333] (-) TimerEvent: {}
+[7.317577] (-) TimerEvent: {}
+[7.417810] (-) TimerEvent: {}
+[7.518044] (-) TimerEvent: {}
+[7.618256] (-) TimerEvent: {}
+[7.718591] (-) TimerEvent: {}
+[7.807035] (hello_moveit) StdoutLine: {'line': b'[100%] Built target hello_moveit\n'}
+[7.817039] (hello_moveit) CommandEnded: {'returncode': 0}
+[7.817786] (hello_moveit) JobProgress: {'identifier': 'hello_moveit', 'progress': 'install'}
+[7.818656] (-) TimerEvent: {}
+[7.825191] (hello_moveit) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit'], 'cwd': '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'grant'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/grant'), ('OLDPWD', '/home/grant/rs2_ros2_ws/motion_test'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2145'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'grant'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'grant'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/humble/bin:/home/grant/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/grant-Yoga-7:@/tmp/.ICE-unix/2118,unix/grant-Yoga-7:/tmp/.ICE-unix/2118'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/fa0cb3a4_a49e_497f_931a_6b870f30c01b'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Z6CUM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.101'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/grant/rs2_ros2_ws/motion_test/install/motion:/opt/ros/humble')]), 'shell': False}
+[7.830502] (hello_moveit) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.830649] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/lib/hello_moveit/hello_moveit\n'}
+[7.830781] (hello_moveit) StdoutLine: {'line': b'-- Set runtime path of "/home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/lib/hello_moveit/hello_moveit" to ""\n'}
+[7.830883] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/ament_index/resource_index/package_run_dependencies/hello_moveit\n'}
+[7.830974] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/ament_index/resource_index/parent_prefix_path/hello_moveit\n'}
+[7.831067] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/ament_prefix_path.sh\n'}
+[7.831154] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/ament_prefix_path.dsv\n'}
+[7.831195] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/path.sh\n'}
+[7.831269] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/path.dsv\n'}
+[7.831338] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.bash\n'}
+[7.831403] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.sh\n'}
+[7.831469] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.zsh\n'}
+[7.831536] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.dsv\n'}
+[7.831575] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/package.dsv\n'}
+[7.831624] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/ament_index/resource_index/packages/hello_moveit\n'}
+[7.831748] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/cmake/hello_moveitConfig.cmake\n'}
+[7.831837] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/cmake/hello_moveitConfig-version.cmake\n'}
+[7.831875] (hello_moveit) StdoutLine: {'line': b'-- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/package.xml\n'}
+[7.832947] (hello_moveit) CommandEnded: {'returncode': 0}
+[7.840140] (hello_moveit) JobEnded: {'identifier': 'hello_moveit', 'rc': 0}
+[7.840604] (-) EventReactorShutdown: {}

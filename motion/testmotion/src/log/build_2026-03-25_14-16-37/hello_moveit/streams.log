@@ -1,0 +1,75 @@
+[0.010s] Invoking command in '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/grant/git/RS2/motion/testmotion/src/hello_moveit -DCMAKE_INSTALL_PREFIX=/home/grant/git/RS2/motion/testmotion/src/install/hello_moveit
+[0.050s] -- The C compiler identification is GNU 11.4.0
+[0.088s] -- The CXX compiler identification is GNU 11.4.0
+[0.093s] -- Detecting C compiler ABI info
+[0.144s] -- Detecting C compiler ABI info - done
+[0.148s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.149s] -- Detecting C compile features
+[0.149s] -- Detecting C compile features - done
+[0.151s] -- Detecting CXX compiler ABI info
+[0.213s] -- Detecting CXX compiler ABI info - done
+[0.218s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.218s] -- Detecting CXX compile features
+[0.218s] -- Detecting CXX compile features - done
+[0.220s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.327s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.393s] -- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)
+[0.518s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[0.550s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.555s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.562s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.571s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.583s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.781s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.823s] -- Found parameter_traits: 0.5.0 (/opt/ros/humble/share/parameter_traits/cmake)
+[0.852s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.854s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.920s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.939s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.971s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.978s] -- Found Threads: TRUE  
+[1.021s] -- Found rclcpp_lifecycle: 16.0.15 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.045s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[1.115s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.140s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.140s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.249s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[1.275s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[1.294s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[1.318s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.379s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.379s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/grant/git/RS2/motion/testmotion/src/hello_moveit/include>
+[1.379s] -- Configured cppcheck exclude dirs and/or files: 
+[1.380s] -- Added test 'lint_cmake' to check CMake code style
+[1.380s] -- Added test 'uncrustify' to check C / C++ code style
+[1.381s] -- Configured uncrustify additional arguments: 
+[1.381s] -- Added test 'xmllint' to check XML markup files
+[1.382s] -- Configuring done
+[1.403s] -- Generating done
+[1.408s] -- Build files have been written to: /home/grant/git/RS2/motion/testmotion/src/build/hello_moveit
+[1.418s] Invoked command in '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/grant/git/RS2/motion/testmotion/src/hello_moveit -DCMAKE_INSTALL_PREFIX=/home/grant/git/RS2/motion/testmotion/src/install/hello_moveit
+[1.419s] Invoking command in '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/grant/git/RS2/motion/testmotion/src/build/hello_moveit -- -j8 -l8
+[1.458s] [ 50%] [32mBuilding CXX object CMakeFiles/hello_moveit.dir/src/hello_moveit.cpp.o[0m
+[1.489s] [100%] [32m[1mLinking CXX executable hello_moveit[0m
+[7.807s] [100%] Built target hello_moveit
+[7.817s] Invoked command in '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/grant/git/RS2/motion/testmotion/src/build/hello_moveit -- -j8 -l8
+[7.825s] Invoking command in '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/grant/git/RS2/motion/testmotion/src/build/hello_moveit
+[7.830s] -- Install configuration: ""
+[7.830s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/lib/hello_moveit/hello_moveit
+[7.830s] -- Set runtime path of "/home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/lib/hello_moveit/hello_moveit" to ""
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/ament_index/resource_index/package_run_dependencies/hello_moveit
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/ament_index/resource_index/parent_prefix_path/hello_moveit
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/ament_prefix_path.sh
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/ament_prefix_path.dsv
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/path.sh
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/environment/path.dsv
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.bash
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.sh
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.zsh
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/local_setup.dsv
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/package.dsv
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/ament_index/resource_index/packages/hello_moveit
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/cmake/hello_moveitConfig.cmake
+[7.831s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/cmake/hello_moveitConfig-version.cmake
+[7.832s] -- Installing: /home/grant/git/RS2/motion/testmotion/src/install/hello_moveit/share/hello_moveit/package.xml
+[7.833s] Invoked command in '/home/grant/git/RS2/motion/testmotion/src/build/hello_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/grant/git/RS2/motion/testmotion/src/build/hello_moveit
