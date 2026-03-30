@@ -4,7 +4,7 @@ TestMotion::TestMotion() : Node("test_motion")
 {
 
     
-    auto qos = rclcpp::SensorDataQoS(); // This qos must match unity!!
+    // auto qos = rclcpp::SensorDataQoS(); // This qos must match unity!!
 
     //JointStates_ = this->create_publisher<sensor_msgs::msg::JointState>("/joint_states_testingggg", qos);
 
@@ -29,7 +29,7 @@ void TestMotion::initMoveIt()
         shared_from_this(), "ur_manipulator");
 }
 
-TestMotion::jointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg){
+void TestMotion::jointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg){
     
     // Do something under lock 
     {
