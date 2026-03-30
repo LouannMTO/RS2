@@ -22,24 +22,22 @@ class TestMotion : public rclcpp::Node
 
         void moveusingQ(double q1, double q2, double q3, double q4, double q5, double q6);
 
-        void jointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg); //! Callback to read join states 
+        void jointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg); //! Callback to read joint states 
+        void targetJointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg); //! Callback to read target joint states 
+        void targetEEPoseCb(const geometry_msgs::msg::PoseStamped::SharedPtr msg); //! Callback to read target EE pose 
 
     private:
         //rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr JointStates_; // Publish joint states to robot
         rclcpp::TimerBase::SharedPtr timer_;  //!< Timer to trigger periodic publishing of joint states
 
-        rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subJointStates_; // Subscribes to JointStates ur3e.
+        rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subJointStates_; //! Subscribes to JointStates ur3e.
+        rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subTargetJointStates_; //! Subscribes to target JointStates from Unity (hopefully).
+        rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr subTargetEEPose_; //! Subscribes to target End Effector pose from Unity (hopefully).
 
         //rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subCloud_; // Subscribes to PointCloud2 of LIDAR data.
 
         // Joint values
         std::vector<double> jointValues;
-        double q1_;
-        double q2_; 
-        double q3_;
-        double q4_; 
-        double q5_; 
-        double q6_;
 
         std::mutex jointstate_mtx_;
 
