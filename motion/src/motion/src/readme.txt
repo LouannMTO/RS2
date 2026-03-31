@@ -12,22 +12,10 @@ HOW To:
 
 
 
-
-
-
-
-
-
 NOTE HOST IP IS: 192.168.56.1
 
 To start PolyScope simulation: 
     ros2 run ur_client_library start_ursim.sh -m ur3e
-    
-    ros2 run ur_client_library start_ursim.sh \
-        -m ur3e \
-        -f "-p 5900:5900 -p 6080:6080 -p 30001-30004:30001-30004 -p 29999:29999"
-
-    Change polyscope port to 30002
 
 Starting the driver
     ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur3e robot_ip:=192.168.56.101 launch_rviz:=true
