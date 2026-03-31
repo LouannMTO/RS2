@@ -30,6 +30,9 @@ TestMotion::TestMotion() : Node("test_motion")
         "/target_ee_pose", qos,
         std::bind(&TestMotion::targetEEPoseCb, this, std::placeholders::_1));
 
+    // this->declare_parameter("robot_description", std::string());
+    // this->declare_parameter("robot_description_semantic", std::string());
+
 }
 
 TestMotion::~TestMotion(){
@@ -40,6 +43,9 @@ void TestMotion::initMoveIt()
 {
     move_group_ = std::make_shared<moveit::planning_interface::MoveGroupInterface>(
         shared_from_this(), "ur_manipulator");
+
+    move_group_->setMaxVelocityScalingFactor(0.1);   // 10% speed
+    move_group_->setMaxAccelerationScalingFactor(0.1);
 }
 
 void TestMotion::jointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg){
@@ -78,7 +84,7 @@ void TestMotion::targetEEPoseCb(const geometry_msgs::msg::PoseStamped::SharedPtr
     // This should check whether path can be planned before moving
     bool success = (move_group_->plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
     if (success) {
-        move_group_->move();
+        move_group_->execute(my_plan);
     } else {
         RCLCPP_WARN(this->get_logger(), "Planning to target pose failed.");
     }

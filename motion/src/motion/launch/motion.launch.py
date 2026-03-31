@@ -29,6 +29,8 @@
 #
 # Author: Denis Stogl
 
+# Added test_motion node to launch file - Grant Taylor
+
 import os
 
 from launch_ros.actions import Node
@@ -45,6 +47,11 @@ from launch.substitutions import (
     LaunchConfiguration,
     PathJoinSubstitution,
 )
+
+# GT added
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.actions import IncludeLaunchDescription, TimerAction
 
 
 def launch_setup(context, *args, **kwargs):
@@ -67,6 +74,9 @@ def launch_setup(context, *args, **kwargs):
     launch_rviz = LaunchConfiguration("launch_rviz")
     launch_servo = LaunchConfiguration("launch_servo")
 
+    robot_ip = LaunchConfiguration("robot_ip")
+    use_fake_hardware = LaunchConfiguration("use_fake_hardware")
+
     joint_limit_params = PathJoinSubstitution(
         [FindPackageShare(description_package), "config", ur_type, "joint_limits.yaml"]
     )
@@ -86,7 +96,8 @@ def launch_setup(context, *args, **kwargs):
             " ",
             PathJoinSubstitution([FindPackageShare(description_package), "urdf", description_file]),
             " ",
-            "robot_ip:=xxx.yyy.zzz.www",
+            "robot_ip:=",
+            robot_ip,
             " ",
             "joint_limit_params:=",
             joint_limit_params,
@@ -270,7 +281,42 @@ def launch_setup(context, *args, **kwargs):
         output="screen",
     )
 
-    nodes_to_start = [move_group_node, rviz_node, servo_node]
+    # GT added
+    ur_control_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution(
+                [FindPackageShare("ur_robot_driver"), "launch", "ur_control.launch.py"]
+            )
+        ),
+        launch_arguments={
+            "ur_type": ur_type,
+            "robot_ip": robot_ip,          # Add this line
+            "use_fake_hardware": use_fake_hardware,
+            "launch_rviz": launch_rviz, # always false, rviz_node handles this
+            "prefix": prefix,
+            #"initial_joint_controller": "joint_trajectory_controller",  # add this
+        }.items(),
+    )
+
+    # GT added
+    test_motion_node = Node(
+        package="motion",
+        executable="testMotion",
+        name="test_motion",
+        output="screen",
+        parameters=[
+            robot_description,
+            robot_description_semantic,
+            {"use_sim_time": use_sim_time},
+        ],
+    )
+
+    delayed_test_motion = TimerAction(
+        period=5.0,
+        actions=[test_motion_node]
+    )
+
+    nodes_to_start = [ur_control_launch, move_group_node, rviz_node, servo_node, delayed_test_motion]
 
     return nodes_to_start
 
@@ -388,6 +434,20 @@ def generate_launch_description():
             description="Prefix of the joint names, useful for "
             "multi-robot setup. If changed than also joint names in the controllers' configuration "
             "have to be updated.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "robot_ip",
+            default_value="xxx.yyy.zzz.www",
+            description="IP address by which the robot can be reached.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "use_fake_hardware",
+            default_value="true",
+            description="Use fake hardware for testing without a real robot.",
         )
     )
     declared_arguments.append(
