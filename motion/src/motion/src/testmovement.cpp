@@ -2,16 +2,13 @@
 
 TestMotion::TestMotion() : Node("test_motion")
 {
-
     
     // This qos must match unity!!
     auto qos = rclcpp::QoS(10);     // history depth 10
     qos.best_effort();              // set reliability to Best-Effort
 
-    //JointStates_ = this->create_publisher<sensor_msgs::msg::JointState>("/joint_states_testingggg", qos);
-
     timer_ = this->create_wall_timer(
-        std::chrono::milliseconds(100),
+        std::chrono::milliseconds(500),
         std::bind(&TestMotion::readQvalues, this));
 
     
@@ -22,7 +19,7 @@ TestMotion::TestMotion() : Node("test_motion")
 
     // Subscriber for target joint poses of the robot
     subTargetJointStates_ = this->create_subscription<sensor_msgs::msg::JointState>(
-      "/target_joint_states", qos,
+      "/g8_joint_states", qos,
       std::bind(&TestMotion::targetJointStateCb, this, std::placeholders::_1));
 
     // Subscriber for target end-effector pose
@@ -30,8 +27,8 @@ TestMotion::TestMotion() : Node("test_motion")
         "/target_ee_pose", qos,
         std::bind(&TestMotion::targetEEPoseCb, this, std::placeholders::_1));
 
-    // this->declare_parameter("robot_description", std::string());
-    // this->declare_parameter("robot_description_semantic", std::string());
+    // // Simulating publishing from Unity
+    // jointstatesPub_ = this->create_publisher<sensor_msgs::msg::JointState>("/g8_joint_states", qos);
 
 }
 
@@ -44,8 +41,8 @@ void TestMotion::initMoveIt()
     move_group_ = std::make_shared<moveit::planning_interface::MoveGroupInterface>(
         shared_from_this(), "ur_manipulator");
 
-    move_group_->setMaxVelocityScalingFactor(0.1);   // 10% speed
-    move_group_->setMaxAccelerationScalingFactor(0.1);
+    // move_group_->setMaxVelocityScalingFactor(0.1);   // 10% speed
+    // move_group_->setMaxAccelerationScalingFactor(0.1);
 }
 
 void TestMotion::jointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg){
@@ -107,15 +104,68 @@ void TestMotion::moveusingQ(double q1, double q2,double q3,double q4,double q5,d
 
 void TestMotion::readQvalues(void){
 
-    std::lock_guard<std::mutex> lock(jointstate_mtx_);  // Mutex as data may be updated at same time
+    // std::lock_guard<std::mutex> lock(jointstate_mtx_);  // Mutex as data may be updated at same time
 
-    if (jointValues.size() >= 6)                        // Ensure all joint values are assigned 
-    {
-        RCLCPP_INFO(this->get_logger(),
-            "Current joints: %.2f %.2f %.2f %.2f %.2f %.2f",
-            jointValues[0], jointValues[1], jointValues[2],
-            jointValues[3], jointValues[4], jointValues[5]);
-    }
+    // if (jointValues.size() >= 6)                        // Ensure all joint values are assigned 
+    // {
+    //     RCLCPP_INFO(this->get_logger(),
+    //         "Current joints: %.2f %.2f %.2f %.2f %.2f %.2f",
+    //         jointValues[0], jointValues[1], jointValues[2],
+    //         jointValues[3], jointValues[4], jointValues[5]);
+    // }
 }
 
+// This function will simulate the joint positions updating as the user moves 
+// the EE in unity
+void TestMotion::demoMovement(){
+    // joint positions
+    double shoulder_pan_joint = 0;
+    double shoulder_lift_joint = -1.57;
+    double elbow_joint = 0; 
+    double wrist_1_joint = -1.57;
+    double wrist_2_joint = 0;
+    double wrist_3_joint = 0.0;
+
+     // Increment each step
+    double increment = 0.05;
+    int steps = 100;
+
+    for (int i = 0; i < steps; i++)
+    {
+        // Slightly change each joint each iteration
+        shoulder_pan_joint += increment;
+        shoulder_lift_joint += increment * 0.5;
+        elbow_joint -= increment * 0.3;
+        wrist_1_joint += increment * 0.2;
+        wrist_2_joint -= increment * 0.1;
+        wrist_3_joint += increment * 0.4;
+
+        sensor_msgs::msg::JointState msg;
+        msg.header.stamp = this->get_clock()->now();
+        msg.name = {
+            "shoulder_pan_joint",
+            "shoulder_lift_joint",
+            "elbow_joint",
+            "wrist_1_joint",
+            "wrist_2_joint",
+            "wrist_3_joint"
+        };
+        msg.position = {
+            shoulder_pan_joint,
+            shoulder_lift_joint,
+            elbow_joint,
+            wrist_1_joint,
+            wrist_2_joint,
+            wrist_3_joint
+        };
+        jointstatesPub_->publish(msg);
+        RCLCPP_INFO(this->get_logger(),
+            "Demo step %d: publishing joints: %.2f %.2f %.2f %.2f %.2f %.2f",
+            i, shoulder_pan_joint, shoulder_lift_joint, elbow_joint,
+            wrist_1_joint, wrist_2_joint, wrist_3_joint);
+
+        // Wait between steps so the robot has time to reach each position
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    }
+}
 

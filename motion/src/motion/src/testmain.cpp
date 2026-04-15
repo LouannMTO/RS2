@@ -6,7 +6,7 @@ int main(int argc, char **argv){
     //Initialize ROS 2
     rclcpp::init(argc, argv);
 
-    // Create an instance of generate_pointcloud
+    // Create an instance of test_motion
     auto test_motion_node = std::make_shared<TestMotion>();
 
     // // Create an instance of the Quadcopter node

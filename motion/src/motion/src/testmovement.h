@@ -26,8 +26,11 @@ class TestMotion : public rclcpp::Node
         void targetJointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg); //! Callback to read target joint states 
         void targetEEPoseCb(const geometry_msgs::msg::PoseStamped::SharedPtr msg); //! Callback to read target EE pose 
 
+        void demoMovement(void);    // Movement for demo
+
     private:
-        //rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr JointStates_; // Publish joint states to robot
+        rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr jointstatesPub_; // Publish joint states to robot
+        
         rclcpp::TimerBase::SharedPtr timer_;  //!< Timer to trigger periodic publishing of joint states
 
         rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subJointStates_; //! Subscribes to JointStates ur3e.

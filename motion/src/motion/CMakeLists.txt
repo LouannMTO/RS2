@@ -35,7 +35,7 @@ find_package(moveit_ros_planning_interface REQUIRED)
 # ament_target_dependencies(laserprocessing rclcpp std_msgs sensor_msgs nav_msgs)
 
 
-# ## This is the tes motion executable
+# ## This is the test motion executable
 add_executable(testMotion src/testmovement.cpp src/testmain.cpp)
 ament_target_dependencies(testMotion 
   rclcpp 
@@ -53,8 +53,18 @@ ament_target_dependencies(testMotion
 )
 # target_link_libraries(genPointCloud laserprocessing)
 
+add_executable(demoMotion src/demo_main.cpp src/testmovement.cpp)
+ament_target_dependencies(demoMotion 
+  rclcpp 
+  nav_msgs
+  sensor_msgs 
+  geometry_msgs 
+  moveit_ros_planning_interface
+)
+
 install(TARGETS
   testMotion
+  demoMotion
   # publishPCD
   # pathPlan
 #   laserprocessing
