@@ -27,8 +27,8 @@ TestMotion::TestMotion() : Node("test_motion")
         "/target_ee_pose", qos,
         std::bind(&TestMotion::targetEEPoseCb, this, std::placeholders::_1));
 
-    // // Simulating publishing from Unity
-    // jointstatesPub_ = this->create_publisher<sensor_msgs::msg::JointState>("/g8_joint_states", qos);
+    // Simulating publishing from Unity
+    jointstatesPub_ = this->create_publisher<sensor_msgs::msg::JointState>("/target_joint_states", qos);
 
 }
 

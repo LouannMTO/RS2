@@ -44,6 +44,8 @@ class TestMotion : public rclcpp::Node
 
         std::mutex jointstate_mtx_;
 
+        std::atomic<bool> is_moving_{false};
+
         std::shared_ptr<moveit::planning_interface::MoveGroupInterface> move_group_;
 
 };
