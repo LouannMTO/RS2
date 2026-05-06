@@ -1,3 +1,5 @@
+#pragma once
+
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/point_cloud2.hpp>
 #include <sensor_msgs/point_cloud2_iterator.hpp>
@@ -26,10 +28,19 @@ class TestMotion : public rclcpp::Node
         void targetJointStateCb(const sensor_msgs::msg::JointState::SharedPtr msg); //! Callback to read target joint states 
         void targetEEPoseCb(const geometry_msgs::msg::PoseStamped::SharedPtr msg); //! Callback to read target EE pose 
 
+        bool isAtTargetPose(const geometry_msgs::msg::Pose& target,
+                    double pos_tol = 0.1,
+                    double ori_tol = 0.05);
+
+        void publishJoints(void); // publish joint states to Unity.
+
+        double normalizeAngle(double angle);
+
         void demoMovement(void);    // Movement for demo
 
     private:
         rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr jointstatesPub_; // Publish joint states to robot
+        rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr jointStatesToUnityPub_; // Publish joint states to robot
         
         rclcpp::TimerBase::SharedPtr timer_;  //!< Timer to trigger periodic publishing of joint states
 
@@ -42,9 +53,17 @@ class TestMotion : public rclcpp::Node
         // Joint values
         std::vector<double> jointValues;
 
-        std::mutex jointstate_mtx_;
+        // Last recieved target EE pose
+        //geometry_msgs::msg::PoseStamped last_ee_pose_;
+        geometry_msgs::msg::PoseStamped::SharedPtr last_ee_pose_;
 
-        std::atomic<bool> is_moving_{false};
+        std::mutex jointstate_mtx_;
+        std::mutex motion_start_mtx_;  // guards join + exchange sequence
+
+        // std::atomic<bool> is_moving_{false};
+
+        std::thread motion_thread_;
+        std::atomic<bool> motion_busy_{false};
 
         std::shared_ptr<moveit::planning_interface::MoveGroupInterface> move_group_;
 

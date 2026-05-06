@@ -15,7 +15,8 @@ int main(int argc, char **argv){
     // auto mission_node = std::make_shared<MissionNode>(quadcopter_node);
 
     // Create an executor
-    rclcpp::executors::MultiThreadedExecutor executor;
+    //rclcpp::executors::MultiThreadedExecutor executor;
+    rclcpp::executors::SingleThreadedExecutor executor;
 
     // Add nodes to the executor
     executor.add_node(test_motion_node);
@@ -28,8 +29,18 @@ int main(int argc, char **argv){
     // Wait for MoveIt to fully start
     std::this_thread::sleep_for(std::chrono::seconds(2));
 
-    // Initialize MoveIt after node is fully created
-    test_motion_node->initMoveIt();
+    // // Initialize MoveIt after node is fully created
+    // test_motion_node->initMoveIt();
+
+    try {
+        test_motion_node->initMoveIt();
+    } catch (const std::exception &e) {
+        RCLCPP_ERROR(rclcpp::get_logger("main"), "initMoveIt failed: %s", e.what());
+        executor.cancel();
+        spin_thread.join();
+        rclcpp::shutdown();
+        return 1;
+    }
 
     // Spin the executor
     //executor.spin();

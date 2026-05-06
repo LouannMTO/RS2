@@ -6,6 +6,7 @@ HOW To:
     2) Run launch file: 
         ros2 launch motion motion.launch.py ur_type:=ur3e robot_ip:=192.168.56.101 use_fake_hardware:=false use_sim_time:=false launch_rviz:=true
         ros2 launch motion motion.launch.py ur_type:=ur3e robot_ip:=192.168.0.194 use_fake_hardware:=false use_sim_time:=false launch_rviz:=true
+        ros2 launch motion motion.launch.py ur_type:=ur3e robot_ip:=192.168.0.191 use_fake_hardware:=false use_sim_time:=false launch_rviz:=true
 
 
 
@@ -55,7 +56,7 @@ To use launch file
 
 
 Commands for ros2
-    ros2 topic pub /target_pose geometry_msgs/msg/PoseStamped "{
+    ros2 topic pub /g8_ee_pose geometry_msgs/msg/PoseStamped "{
         header: {frame_id: 'base_link'},
         pose: {
             position: {x: 0.4, y: 0.0, z: 0.4},
