@@ -35,7 +35,8 @@ import os
 
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from ur_moveit_config.launch_common import load_yaml
+# from ur_moveit_config.launch_common import load_yaml
+from ur_onrobot_moveit_config.launch_common import load_yaml
 from launch_ros.parameter_descriptions import ParameterValue
 
 from launch import LaunchDescription
@@ -76,6 +77,11 @@ def launch_setup(context, *args, **kwargs):
 
     robot_ip = LaunchConfiguration("robot_ip")
     use_fake_hardware = LaunchConfiguration("use_fake_hardware")
+
+    # For RG2 Gripper
+    # launch_gripper = LaunchConfiguration("launch_gripper")
+    # gripper_connection_type = LaunchConfiguration("gripper_connection_type")
+    onrobot_type = LaunchConfiguration("onrobot_type")
 
     joint_limit_params = PathJoinSubstitution(
         [FindPackageShare(description_package), "config", ur_type, "joint_limits.yaml"]
@@ -126,6 +132,9 @@ def launch_setup(context, *args, **kwargs):
             "ur_type:=",
             ur_type,
             " ",
+            "onrobot_type:=",
+            onrobot_type,
+            " ",
             "script_filename:=ros_control.urscript",
             " ",
             "input_recipe_filename:=rtde_input_recipe.txt",
@@ -153,7 +162,8 @@ def launch_setup(context, *args, **kwargs):
             "name:=",
             # Also ur_type parameter could be used but then the planning group names in yaml
             # configs has to be updated!
-            "ur",
+            # "ur",
+            "ur_onrobot",
             " ",
             "prefix:=",
             prefix,
@@ -166,9 +176,14 @@ def launch_setup(context, *args, **kwargs):
         "publish_robot_description_semantic": _publish_robot_description_semantic
     }
 
-    robot_description_kinematics = PathJoinSubstitution(
-        [FindPackageShare(moveit_config_package), "config", "kinematics.yaml"]
-    )
+    # robot_description_kinematics = PathJoinSubstitution(
+    #     [FindPackageShare(moveit_config_package), "config", "kinematics.yaml"]
+    # )
+    robot_description_kinematics = {
+        "robot_description_kinematics": load_yaml(
+            "ur_onrobot_moveit_config", "config/kinematics.yaml"
+        )
+    }
 
     robot_description_planning = {
         "robot_description_planning": load_yaml(
@@ -185,20 +200,23 @@ def launch_setup(context, *args, **kwargs):
             "start_state_max_bounds_error": 0.1,
         }
     }
-    ompl_planning_yaml = load_yaml("ur_moveit_config", "config/ompl_planning.yaml")
-    ompl_planning_pipeline_config["move_group"].update(ompl_planning_yaml)
+    ompl_planning_yaml = load_yaml("ur_onrobot_moveit_config", "config/ompl_planning.yaml")
+    controllers_yaml   = load_yaml("ur_onrobot_moveit_config", "config/controllers.yaml")
+    servo_yaml         = load_yaml("ur_onrobot_moveit_config", "config/ur_onrobot_servo.yaml")
+    # ompl_planning_yaml = load_yaml("ur_moveit_config", "config/ompl_planning.yaml")
+    # ompl_planning_pipeline_config["move_group"].update(ompl_planning_yaml)
 
-    # Trajectory Execution Configuration
-    controllers_yaml = load_yaml("ur_moveit_config", "config/controllers.yaml")
+    # # Trajectory Execution Configuration
+    # controllers_yaml = load_yaml("ur_moveit_config", "config/controllers.yaml")
     # the scaled_joint_trajectory_controller does not work on fake hardware
     change_controllers = context.perform_substitution(use_sim_time)
     if change_controllers == "true":
         controllers_yaml["scaled_joint_trajectory_controller"]["default"] = False
         controllers_yaml["joint_trajectory_controller"]["default"] = True
-    else:   #GT added
-        # Real hardware - use scaled JTC
-        controllers_yaml["scaled_joint_trajectory_controller"]["default"] = True
-        controllers_yaml["joint_trajectory_controller"]["default"] = False
+    # else:   #GT added
+    #     # Real hardware - use scaled JTC
+    #     controllers_yaml["scaled_joint_trajectory_controller"]["default"] = True
+    #     controllers_yaml["joint_trajectory_controller"]["default"] = False
 
     moveit_controllers = {
         "moveit_simple_controller_manager": controllers_yaml,
@@ -252,10 +270,10 @@ def launch_setup(context, *args, **kwargs):
     )
     rviz_node = Node(
         package="rviz2",
-        condition=IfCondition(launch_rviz),
+        # condition=IfCondition(launch_rviz),
         executable="rviz2",
         name="rviz2_moveit",
-        output="log",
+        output="screen",
         arguments=["-d", rviz_config_file],
         parameters=[
             robot_description,
@@ -270,8 +288,8 @@ def launch_setup(context, *args, **kwargs):
         ],
     )
 
-    # Servo node for realtime control
-    servo_yaml = load_yaml("ur_moveit_config", "config/ur_servo.yaml")
+    # # Servo node for realtime control
+    # servo_yaml = load_yaml("ur_moveit_config", "config/ur_servo.yaml")
     servo_params = {"moveit_servo": servo_yaml}
     servo_node = Node(
         package="moveit_servo",
@@ -281,24 +299,41 @@ def launch_setup(context, *args, **kwargs):
             servo_params,
             robot_description,
             robot_description_semantic,
+            robot_description_kinematics, 
         ],
         output="screen",
     )
 
     # GT added
-    ur_control_launch = IncludeLaunchDescription(
+    # ur_control_launch = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         PathJoinSubstitution(
+    #             [FindPackageShare("ur_robot_driver"), "launch", "ur_control.launch.py"]
+    #         )
+    #     ),
+    #     launch_arguments={
+    #         "ur_type": ur_type,
+    #         "robot_ip": robot_ip,          # Add this line
+    #         "use_fake_hardware": use_fake_hardware,
+    #         "launch_rviz": launch_rviz, # always false, rviz_node handles this
+    #         "prefix": prefix,
+    #         "initial_joint_controller": "scaled_joint_trajectory_controller",
+    #     }.items(),
+    # )
+    ur_onrobot_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            PathJoinSubstitution(
-                [FindPackageShare("ur_robot_driver"), "launch", "ur_control.launch.py"]
-            )
+            PathJoinSubstitution([
+                FindPackageShare("ur_onrobot_control"), 
+                "launch", 
+                "start_robot.launch.py"   # File 3
+            ])
         ),
         launch_arguments={
             "ur_type": ur_type,
-            "robot_ip": robot_ip,          # Add this line
+            "onrobot_type": onrobot_type,
+            "robot_ip": robot_ip,
             "use_fake_hardware": use_fake_hardware,
-            "launch_rviz": launch_rviz, # always false, rviz_node handles this
-            "prefix": prefix,
-            #"initial_joint_controller": "joint_trajectory_controller",  # add this
+            "launch_rviz": "false",  # MoveIt's RViz handles this
         }.items(),
     )
 
@@ -311,16 +346,46 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             robot_description,
             robot_description_semantic,
+            robot_description_kinematics,
             {"use_sim_time": use_sim_time},
         ],
     )
 
     delayed_test_motion = TimerAction(
-        period=5.0,
+        period=1.0,
         actions=[test_motion_node]
     )
 
-    nodes_to_start = [ur_control_launch, move_group_node, rviz_node, servo_node, delayed_test_motion]
+    # #gripper
+    # gripper_launch = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         PathJoinSubstitution(
+    #             [FindPackageShare("onrobot_driver"), "launch", "onrobot_control.launch.py"]
+    #         )
+    #     ),
+    #     launch_arguments={
+    #         "onrobot_type": "rg2",
+    #         "connection_type": gripper_connection_type,
+    #         "device": "/tmp/ttyUR",        # serial via UR Tool I/O
+    #         "use_fake_hardware": use_fake_hardware,
+    #         "launch_rviz": "false",        # your main rviz_node handles visualisation
+    #         "launch_rsp": "false",         # ur robot state publisher already running
+    #         "ns": "onrobot",
+    #     }.items(),
+    #     condition=IfCondition(launch_gripper),  # only launch if requested
+    # )
+
+    # nodes_to_start = [ur_control_launch, move_group_node, rviz_node, servo_node, delayed_test_motion]
+
+    nodes_to_start = [
+        ur_onrobot_control_launch,
+        # ur_control_launch,
+        move_group_node,
+        rviz_node,
+        servo_node,
+        delayed_test_motion,
+        # gripper_launch,       # Gripper
+    ]
 
     return nodes_to_start
 
@@ -376,7 +441,8 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_package",
-            default_value="ur_description",
+            default_value="ur_onrobot_description",
+            # default_value="ur_description",
             description="Description package with robot URDF/XACRO files. Usually the argument "
             "is not set, it enables use of a custom description.",
         )
@@ -384,7 +450,8 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_file",
-            default_value="ur.urdf.xacro",
+            default_value="ur_onrobot.urdf.xacro",
+            # default_value="ur.urdf.xacro",
             description="URDF/XACRO description file with the robot.",
         )
     )
@@ -398,15 +465,19 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "moveit_config_package",
-            default_value="ur_moveit_config",
-            description="MoveIt config package with robot SRDF/XACRO files. Usually the argument "
+            default_value="ur_onrobot_moveit_config", #Adding gripper
+            description="MoveIt config package with robot SRDF/XACRO files (including gripper). Usually the argument "
             "is not set, it enables use of a custom moveit config.",
+            # default_value="ur_moveit_config",
+            # description="MoveIt config package with robot SRDF/XACRO files. Usually the argument "
+            # "is not set, it enables use of a custom moveit config.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "moveit_config_file",
-            default_value="ur.srdf.xacro",
+            default_value="ur_onrobot.srdf.xacro",
+            # default_value="ur.srdf.xacro",
             description="MoveIt SRDF/XACRO description file with the robot.",
         )
     )
@@ -460,5 +531,20 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument("launch_servo", default_value="true", description="Launch Servo?")
     )
+    # # For RG2 Gripper
+    # declared_arguments.append(
+    #     DeclareLaunchArgument(
+    #         "launch_gripper",
+    #         default_value="false",
+    #         description="Launch the OnRobot RG2 gripper driver.",
+    #     )
+    # )
+    # declared_arguments.append(
+    #     DeclareLaunchArgument(
+    #         "gripper_connection_type",
+    #         default_value="serial",
+    #         description="Connection type for gripper: serial or tcp.",
+    #     )
+    # )
 
     return LaunchDescription(declared_arguments + [OpaqueFunction(function=launch_setup)])

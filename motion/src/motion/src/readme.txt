@@ -67,3 +67,14 @@ Commands for ros2
     ros2 topic pub /g8_joint_states sensor_msgs/msg/JointState "{
         position: [0.0, -1.2, 1.2, -1.5, 1.57, 0.0]
     }"
+
+
+    ros2 control list_controllers
+    ros2 control switch_controllers --activate scaled_joint_trajectory_controller
+
+    ros2 control switch_controllers \
+  --activate scaled_joint_trajectory_controller \
+  --deactivate joint_trajectory_controller
+
+#works with gripper
+  ros2 launch motion motion.launch.py ur_type:=ur3e onrobot_type:=rg2 use_fake_hardware:=true robot_ip:=192.168.56.101
